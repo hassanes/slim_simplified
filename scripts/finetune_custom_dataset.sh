@@ -63,6 +63,12 @@ elif [ $train_model -eq 3 ]; then
 	zip_file_name="resnet_v1_152_2016_08_28.tar.gz"
 	model_name="resnet_v1_152"
 	trainable_scopes="resnet_v1_152/logits"
+elif [ $train_model -eq 4 ]; then
+	model_url="http://download.tensorflow.org/models/resnet_v2_152_2017_04_14.tar.gz"
+	model_file_name=""
+	zip_file_name="resnet_v2_152_2017_04_14.tar.gz"
+	model_name="resnet_v2_152.ckpt"
+	trainable_scopes="resnet_v2_152/logits"
 fi
 
 echo "model $model_file_name link : $model_url train scope $trainable_scopes zip files name $zip_file_name"

@@ -116,7 +116,10 @@ python train_image_classifier.py \
 python eval_image_classifier.py \
   --checkpoint_path=${TRAIN_DIR} \
   --eval_dir=${TRAIN_DIR} \
-  --dataset_name=custom
+  --dataset_name=custom \
+  --train_num=${train_data} \
+  --validation_num=${test_data} \
+  --num_of_classes=${num_category} \
   --dataset_split_name=validation \
   --dataset_dir=${dataset_dir} \
   --model_name=${model_name}

@@ -118,6 +118,6 @@ python eval_image_classifier.py \
   --eval_dir=${TRAIN_DIR} \
   --dataset_name=custom
   --dataset_split_name=validation \
-  --dataset_dir=${DATASET_DIR} \
+  --dataset_dir=${dataset_dir} \
   --model_name=${model_name}
 #fi

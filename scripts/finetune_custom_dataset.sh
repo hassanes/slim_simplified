@@ -104,6 +104,10 @@ fi
 
 train_dir=/tmp/custom-models/${model_name}
 
+if [ ! -d "$train_dir" ]; then
+  mkdir ${train_dir}
+fi
+
 python download_and_convert_data.py \
 	--dataset_name=custom \
 	--dataset_dir=${dataset_dir} \

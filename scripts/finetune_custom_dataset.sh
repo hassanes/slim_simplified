@@ -75,6 +75,12 @@ elif [ $train_model -eq 5 ]; then
 	zip_file_name="inception_resnet_v2_2016_08_30.tar.gz"
 	model_name="inception_resnet_v2"
 	trainable_scopes="InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits"
+elif [ $train_model -eq 6 ]; then
+	model_url="http://download.tensorflow.org/models/vgg_19_2016_08_28.tar.gz"
+	model_file_name="vgg_19.ckpt"
+	zip_file_name="vgg_19_2016_08_28.tar.gz"
+	model_name="vgg_19"
+	trainable_scopes="vgg_19/logits"
 fi
 
 echo "model $model_file_name link : $model_url train scope $trainable_scopes zip files name $zip_file_name"

@@ -84,6 +84,8 @@ if [ ! -f ${PRETRAINED_CHECKPOINT_DIR}/${model_file_name} ]; then
   rm ${zip_file_name}
 fi
 
+train_dir=/tmp/custom-models/${model_name}
+
 python download_and_convert_data.py \
 	--dataset_name=custom \
 	--dataset_dir=${dataset_dir} \
@@ -92,7 +94,7 @@ python download_and_convert_data.py \
 
 
 python train_image_classifier.py \
-  --train_dir=${TRAIN_DIR} \
+  --train_dir=${train_dir} \
   --dataset_name=custom \
   --dataset_split_name=train \
   --dataset_dir=${dataset_dir} \
@@ -114,8 +116,8 @@ python train_image_classifier.py \
   --weight_decay=0.00004
 
 python eval_image_classifier.py \
-  --checkpoint_path=${TRAIN_DIR} \
-  --eval_dir=${TRAIN_DIR} \
+  --checkpoint_path=${train_dir} \
+  --eval_dir=${train_dir} \
   --dataset_name=custom \
   --train_num=${train_data} \
   --validation_num=${test_data} \

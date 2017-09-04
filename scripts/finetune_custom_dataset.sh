@@ -10,7 +10,7 @@ read -p "Enter path to your dataset : " dataset_dir
 
 echo "Your path to dataset is $dataset_dir"
 
-all_images=($(ls -lR $dataset_dir/*/*.jpg | wc -l))
+all_images=$(ls -lR $dataset_dir/*/*.jpg | wc -l)
 
 read -p "Specify train percentage (reminder test) : " train_percentage
 

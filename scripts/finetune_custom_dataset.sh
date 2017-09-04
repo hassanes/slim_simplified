@@ -65,10 +65,16 @@ elif [ $train_model -eq 3 ]; then
 	trainable_scopes="resnet_v1_152/logits"
 elif [ $train_model -eq 4 ]; then
 	model_url="http://download.tensorflow.org/models/resnet_v2_152_2017_04_14.tar.gz"
-	model_file_name=""
+	model_file_name="resnet_v2_152.ckpt"
 	zip_file_name="resnet_v2_152_2017_04_14.tar.gz"
-	model_name="resnet_v2_152.ckpt"
+	model_name="resnet_v2_152"
 	trainable_scopes="resnet_v2_152/logits"
+elif [ $train_model -eq 5 ]; then
+	model_url="http://download.tensorflow.org/models/inception_resnet_v2_2016_08_30.tar.gz"
+	model_file_name="inception_resnet_v2_2016_08_30.ckpt"
+	zip_file_name="inception_resnet_v2_2016_08_30.tar.gz"
+	model_name="inception_resnet_v2"
+	trainable_scopes="InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits"
 fi
 
 echo "model $model_file_name link : $model_url train scope $trainable_scopes zip files name $zip_file_name"

@@ -78,6 +78,15 @@ tf.app.flags.DEFINE_float(
 
 tf.app.flags.DEFINE_integer(
     'eval_image_size', None, 'Eval image size')
+    
+tf.app.flags.DEFINE_integer(
+    'train_num', 0, 'The number of train photos.')
+
+tf.app.flags.DEFINE_integer(
+    'validation_num', 0, 'The number of validation photos.')
+
+tf.app.flags.DEFINE_integer(
+    'num_of_classes', 0, 'The number of classes.')
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -94,7 +103,7 @@ def main(_):
     # Select the dataset #
     ######################
     dataset = dataset_factory.get_dataset(
-        FLAGS.dataset_name, FLAGS.dataset_split_name, FLAGS.dataset_dir)
+        FLAGS.dataset_name, FLAGS.dataset_split_name, FLAGS.dataset_dir, FLAGS.train_num, FLAGS.validation_num, FLAGS.num_of_classes)
 
     ####################
     # Select the model #

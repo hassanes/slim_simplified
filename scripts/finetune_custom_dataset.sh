@@ -80,7 +80,7 @@ elif [ $train_model -eq 6 ]; then
 	model_file_name="vgg_19.ckpt"
 	zip_file_name="vgg_19_2016_08_28.tar.gz"
 	model_name="vgg_19"
-	trainable_scopes="vgg_19/logits"
+	trainable_scopes="vgg_19/fc8"
 fi
 
 echo "model $model_file_name link : $model_url train scope $trainable_scopes zip files name $zip_file_name"

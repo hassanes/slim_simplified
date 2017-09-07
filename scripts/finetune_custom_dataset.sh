@@ -81,6 +81,12 @@ elif [ $train_model -eq 6 ]; then
 	zip_file_name="vgg_19_2016_08_28.tar.gz"
 	model_name="vgg_19"
 	trainable_scopes="vgg_19/fc8"
+elif [ $train_model -eq 7 ]; then
+	model_url="http://download.tensorflow.org/models/mobilenet_v1_1.0_224_2017_06_14.tar.gz"
+	model_file_name="mobilenet_v1_1.0_224.ckpt.data-00000-of-00001"
+	zip_file_name="mobilenet_v1_1.0_224_2017_06_14.tar.gz"
+	model_name="mobilenet_v1"
+	trainable_scopes="MobilenetV1/Logits"
 fi
 
 echo "model $model_file_name link : $model_url train scope $trainable_scopes zip files name $zip_file_name"

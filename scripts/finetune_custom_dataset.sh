@@ -83,7 +83,7 @@ elif [ $train_model -eq 6 ]; then
 	trainable_scopes="vgg_19/fc8"
 elif [ $train_model -eq 7 ]; then
 	model_url="http://download.tensorflow.org/models/mobilenet_v1_1.0_224_2017_06_14.tar.gz"
-	model_file_name="mobilenet_v1_1.0_224.ckpt.data-00000-of-00001"
+	model_file_name="mobilenet_v1_1.0_224.ckpt"
 	zip_file_name="mobilenet_v1_1.0_224_2017_06_14.tar.gz"
 	model_name="mobilenet_v1"
 	trainable_scopes="MobilenetV1/Logits"

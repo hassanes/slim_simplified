@@ -5,13 +5,13 @@ This repository some of the code from [Tensorflow slim][Tensorflow slim] and a m
 
 ### Run a file
 
-In order to run a code to finetune or transfer learning with CNN models, simply just run **finetune_custom_dataset.sh** in a **scripts** folder.
+In order to run a code to finetune or transfer learning with CNN models, simply just run `finetune_custom_dataset.sh` in a `scripts` folder.
 
 ```Shell
 sh ./scripts/finetune_custom_dataset.sh
 ```
 
- This script are support 7 CNN models, there are :
+ This script is support 7 CNN models, there are :
  * InceptionV3
  * InceptionV4
  * Resnet Inception

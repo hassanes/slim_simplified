@@ -52,7 +52,7 @@ FLAGS = tf.app.flags.FLAGS
 tf.app.flags.DEFINE_string(
     'dataset_name',
     None,
-    'The name of the dataset to convert, one of "cifar10", "flowers", "mnist" , "custom".')
+    'The name of the dataset to convert, one of "cifar10", "flowers", "mnist".')
 
 tf.app.flags.DEFINE_string(
     'dataset_dir',

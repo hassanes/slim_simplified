@@ -58,6 +58,10 @@ _ITEMS_TO_DESCRIPTIONS = {
 
 _NUM_CLASSES = 1001
 
+# If set to false, will not try to set label_to_names in dataset
+# by reading them from labels.txt or github.
+LOAD_READABLE_NAMES = True
+
 
 def create_readable_names_for_imagenet_labels():
   """Create a dict mapping label id to human readable string.
@@ -79,11 +83,11 @@ def create_readable_names_for_imagenet_labels():
   (since 0 is reserved for the background class).
 
   Code is based on
-  https://github.com/tensorflow/models/blob/master/inception/inception/data/build_imagenet_data.py#L463
+  https://github.com/tensorflow/models/blob/master/research/inception/inception/data/build_imagenet_data.py#L463
   """
 
   # pylint: disable=g-line-too-long
-  base_url = 'https://raw.githubusercontent.com/tensorflow/models/master/inception/inception/data/'
+  base_url = 'https://raw.githubusercontent.com/tensorflow/models/master/research/inception/inception/data/'
   synset_url = '{}/imagenet_lsvrc_2015_synsets.txt'.format(base_url)
   synset_to_human_url = '{}/imagenet_metadata.txt'.format(base_url)
 
@@ -177,11 +181,12 @@ def get_split(split_name, dataset_dir, file_pattern=None, reader=None):
       keys_to_features, items_to_handlers)
 
   labels_to_names = None
-  if dataset_utils.has_labels(dataset_dir):
-    labels_to_names = dataset_utils.read_label_file(dataset_dir)
-  else:
-    labels_to_names = create_readable_names_for_imagenet_labels()
-    dataset_utils.write_label_file(labels_to_names, dataset_dir)
+  if LOAD_READABLE_NAMES:
+    if dataset_utils.has_labels(dataset_dir):
+      labels_to_names = dataset_utils.read_label_file(dataset_dir)
+    else:
+      labels_to_names = create_readable_names_for_imagenet_labels()
+      dataset_utils.write_label_file(labels_to_names, dataset_dir)
 
   return slim.dataset.Dataset(
       data_sources=file_pattern,

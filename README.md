@@ -35,6 +35,11 @@ pip install -r requirements.txt
 - Nvidia cuDNN SDK version >= 7.2, see [cuDNN Download Page][cudnn download].
 - GPU contains a more than 4 gigabytes of memory is recommend for a faster performance.
 
+### Todos
+
+- [ ] Freeze model graph for application usage.
+- [ ] NasNet model.
+
 [tensorflow slim]: https://github.com/tensorflow/models/tree/master/research/slim
 [tensorflow website]: https://www.tensorflow.org/
 [cuda toolkit archive]: https://developer.nvidia.com/cuda-toolkit-archive
